@@ -6,7 +6,7 @@ import express from 'express';
 import { routeMap } from './route/index.js';
 import { responseHandler } from './middleware/responseHandler.js';
 import { debugLogger } from './middleware/debug.js';
-// import { mongoConnection } from './db/mongo/connection/index.js';
+import { mongoConnection } from './db/mongo/connection/index.js';
 
 const app = express();
 const PORT = process.env.PORT || 3005;
@@ -18,7 +18,7 @@ async function main() {
     app.use(debugLogger);
     app.use(responseHandler);
 
-    // await mongoConnection.init();
+    await mongoConnection.init();
 
     app.get('/ping', (req, res) => {
       return res.success('Server is working fine.', { timestamp: Date.now() });

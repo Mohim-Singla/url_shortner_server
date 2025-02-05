@@ -1,2 +1,5 @@
+import { shortenUrl } from './shortenUrl.js';
 
-export const service = {};
+export const service = {
+  shortenUrl,
+};
