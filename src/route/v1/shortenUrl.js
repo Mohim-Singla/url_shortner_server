@@ -12,4 +12,6 @@ const router = new express.Router();
 
 router.post('/generate', validateRequest(JoiSchemas.shortenUrl.generateShortenUrl.body), controller.shortenUrl.generateShortenUrl);
 
+router.get('/:tinyUrl', controller.shortenUrl.redirectToOriginalUrl);
+
 export const shortenUrl = router;

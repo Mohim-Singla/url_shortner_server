@@ -17,16 +17,27 @@ async function validate(shorten_url) {
 async function save(params) {
   const data = {
     shorten_url: params.shorten_url,
-    original_base_url: params.base_url,
-    original_end_point: params.end_point,
+    original_url: params.original_url,
     expiry_timestamp: params.expiry_timestamp,
   };
   const result = await mongoRepository.urlMappings.create(data);
   return result;
 }
 
+async function getOriginalUrl(shorten_url) {
+  const filter = {
+    shorten_url,
+    expiry_timestamp: { $gt: new Date() },
+    is_enabled: true,
+  };
+  const short_url_data = await mongoRepository.urlMappings.fetchOne(filter);
+
+  return short_url_data?.original_url;
+}
+
 export const shortenUrl = {
   generate,
+  getOriginalUrl,
   save,
   validate,
 };

@@ -2,12 +2,12 @@ import Joi from 'joi';
 
 const generateShortenUrl = {
   body: Joi.object({
-    base_url: Joi.string().required(),
-    end_point: Joi.string().required(),
+    url: Joi.string().required(),
     expiry: Joi.object({
       value: Joi.number().required(),
       unit: Joi.string().required(),
     }).required(),
+    prefer_existing_url: Joi.boolean().optional(),
   }),
 };
 
