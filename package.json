@@ -1,0 +1,37 @@
+{
+  "name": "url_shortner_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:fix": "eslint --fix '**/*.{js,cjs}'",
+    "db:create": "npx sequelize db:create",
+    "db:migrate": "npx sequelize db:migrate",
+    "db:seed": "npx sequelize db:seed:all",
+    "db:undo-migrate": "npx sequelize db:migrate:undo",
+    "db:undo-seed": "npx sequelize db:seed:undo:all"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "eslint": "^9.19.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^15.14.0",
+    "jsdoc": "^4.0.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "debug": "^4.3.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "joi": "^17.13.3",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.8.1"
+  },
+  "keywords": [],
+  "author": "mohimsingla@gmail.com",
+  "license": "ISC"
+}
