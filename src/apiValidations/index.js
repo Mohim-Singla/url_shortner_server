@@ -1,5 +1,5 @@
 import { shortenUrl } from './shortenUrl.js';
 
-export const controller = {
+export const JoiSchemas = {
   shortenUrl,
 };
