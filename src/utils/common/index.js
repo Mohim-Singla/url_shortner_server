@@ -27,16 +27,16 @@ export const common = {
 
     switch (unit) {
     case 'second':
-      return new Date(now.getTime() + value * 1000);
+      return new Date(now.getTime() + value * 1000).toISOString();
     case 'minute':
-      return new Date(now.getTime() + value * 60 * 1000);
+      return new Date(now.getTime() + value * 60 * 1000).toISOString();
     case 'hour':
-      return new Date(now.getTime() + value * 60 * 60 * 1000);
+      return new Date(now.getTime() + value * 60 * 60 * 1000).toISOString();
     case 'day':
-      return new Date(now.getTime() + value * 24 * 60 * 60 * 1000);
+      return new Date(now.getTime() + value * 24 * 60 * 60 * 1000).toISOString();
     }
 
-    return now;
+    return now.toISOString();
   },
   base62Encode: (num) => {
     let shortURL = '';
