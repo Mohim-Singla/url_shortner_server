@@ -5,4 +5,5 @@ export const constant = {
     PROD: 'production',
   },
   EXPIRY_UNITS: ['day', 'hour', 'minute', 'second'],
+  base62Chars: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
 };

@@ -1,6 +1,12 @@
 import { service } from '../service/index.js';
 import { utility } from '../utils/index.js';
 
+/**
+ * Generates a shortened URL and saves it to the database.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @returns {Promise<Object>} The response object with the shortened URL and expiry timestamp.
+ */
 async function generateShortenUrl(req, res) {
   try {
     const { expiry } = req.body;
@@ -23,6 +29,12 @@ async function generateShortenUrl(req, res) {
   }
 }
 
+/**
+ * Redirects to the original URL based on the shortened URL.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @returns {Promise<Object>} The response object with the redirection or error message.
+ */
 async function redirectToOriginalUrl(req, res) {
   try {
     const { tinyUrl } = req.params;
