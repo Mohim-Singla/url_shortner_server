@@ -8,7 +8,6 @@ const generateShortenUrl = {
       value: Joi.number().required(),
       unit: Joi.string().valid(...utility.constant.EXPIRY_UNITS).required(),
     }).required(),
-    prefer_existing_url: Joi.boolean().optional(),
   }),
 };
 
