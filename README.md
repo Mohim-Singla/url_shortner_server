@@ -40,5 +40,18 @@ curl --location 'http://localhost:3005/shorten-url/v1/generate' \
 }'
 ```
 
+#### Sample Response
+```json
+{
+    "status": "Success",
+    "message": "Shorten URL generated successfully.",
+    "statusCode": 200,
+    "response": {
+        "shorten_url": "http://localhost:3005/shorten-url/v1/00JamIhJ",
+        "expiry_timestamp": "2025-02-05T13:04:55.498Z"
+    }
+}
+```
+
 ## License
 This project is licensed under the MIT License.
